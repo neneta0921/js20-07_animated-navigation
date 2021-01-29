@@ -29,7 +29,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.7);
   transform: translateX(-100vw);
 
   &-slide-right {
@@ -44,14 +44,15 @@ body {
 }
 
 /* Nav Menu Items */
-nav,
-nav ul {
+nav {
   height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 nav ul {
+  @extend nav;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,49 +91,19 @@ nav ul {
         opacity: 1;
       }
     }
+  }
+}
 
-    &:nth-of-type(1) {
-      background-color: var(--navColor1);
-    }
-
-    &:nth-of-type(2) {
-      background-color: var(--navColor2);
-    }
-
-    &:nth-of-type(3) {
-      background-color: var(--navColor3);
-    }
-
-    &:nth-of-type(4) {
-      background-color: var(--navColor4);
-    }
-
-    &:nth-of-type(5) {
-      background-color: var(--navColor5);
-    }
+@for $i from 1 through 5 {
+  nav ul li:nth-of-type(#{$i}) {
+    background-color: var(--navColor#{$i});
   }
 }
 
 /* Slide in animation with delay for each nav item */
-.slide-in {
-  &-1 {
-    animation: slide-in 0.4s linear 0.2s both;
-  }
-
-  &-2 {
-    animation: slide-in 0.4s linear 0.4s both;
-  }
-
-  &-3 {
-    animation: slide-in 0.4s linear 0.6s both;
-  }
-
-  &-4 {
-    animation: slide-in 0.4s linear 0.8s both;
-  }
-
-  &-5 {
-    animation: slide-in 0.4s linear 1s both;
+@for $i from 1 through 5 {
+  .slide-in-#{$i} {
+    animation: slide-in 0.4s linear (0.2s * $i) both;
   }
 }
 
@@ -147,25 +118,9 @@ nav ul {
 }
 
 /* Slide out animation with delay for each nav item */
-.slide-out {
-  &-1 {
-    animation: slide-out 0.3s linear 0.5s both;
-  }
-
-  &-2 {
-    animation: slide-out 0.3s linear 0.4s both;
-  }
-
-  &-3 {
-    animation: slide-out 0.3s linear 0.3s both;
-  }
-
-  &-4 {
-    animation: slide-out 0.3s linear 0.2s both;
-  }
-
-  &-5 {
-    animation: slide-out 0.3s linear 0.1s both;
+@for $i from 1 through 5 {
+  .slide-out-#{$i} {
+    animation: slide-out 0.3s linear (0.6s - 0.1s * $i) both;
   }
 }
 

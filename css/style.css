@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 :root {
   --primaryColor: #fff;
   --navColor1: #21292c;
@@ -11,7 +10,7 @@
 
 html {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -31,26 +30,25 @@ body {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   -webkit-transform: translateX(-100vw);
-  transform: translateX(-100vw);
+          transform: translateX(-100vw);
 }
 
 .overlay-slide-right {
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   -webkit-transform: translateX(0);
-  transform: translateX(0);
+          transform: translateX(0);
 }
 
 .overlay-slide-left {
   -webkit-transition: all 0.8s ease-in-out;
   transition: all 0.8s ease-in-out;
   -webkit-transform: translateX(-100vw);
-  transform: translateX(-100vw);
+          transform: translateX(-100vw);
 }
 
 /* Nav Menu Items */
-nav,
-nav ul {
+nav, nav ul {
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -64,12 +62,12 @@ nav ul {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
 }
 
@@ -78,7 +76,7 @@ nav ul li {
   overflow: hidden;
 }
 
-nav li a {
+nav ul li a {
   position: relative;
   top: 45%;
   color: #fff;
@@ -89,12 +87,12 @@ nav li a {
   text-align: center;
 }
 
-nav li a:hover {
+nav ul li a:hover {
   -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+          transform: scale(1.2);
 }
 
-nav li a::before {
+nav ul li a::before {
   content: '';
   width: 25vw;
   height: 3px;
@@ -105,123 +103,123 @@ nav li a::before {
   opacity: 0;
 }
 
-nav li a:hover::before {
+nav ul li a:hover::before {
   opacity: 1;
 }
 
-nav li:nth-of-type(1) {
+nav ul li:nth-of-type(1) {
   background-color: var(--navColor1);
 }
 
-nav li:nth-of-type(2) {
+nav ul li:nth-of-type(2) {
   background-color: var(--navColor2);
 }
 
-nav li:nth-of-type(3) {
+nav ul li:nth-of-type(3) {
   background-color: var(--navColor3);
 }
 
-nav li:nth-of-type(4) {
+nav ul li:nth-of-type(4) {
   background-color: var(--navColor4);
 }
 
-nav li:nth-of-type(5) {
+nav ul li:nth-of-type(5) {
   background-color: var(--navColor5);
 }
 
 /* Slide in animation with delay for each nav item */
 .slide-in-1 {
   -webkit-animation: slide-in 0.4s linear 0.2s both;
-  animation: slide-in 0.4s linear 0.2s both;
+          animation: slide-in 0.4s linear 0.2s both;
 }
 
 .slide-in-2 {
   -webkit-animation: slide-in 0.4s linear 0.4s both;
-  animation: slide-in 0.4s linear 0.4s both;
+          animation: slide-in 0.4s linear 0.4s both;
 }
 
 .slide-in-3 {
   -webkit-animation: slide-in 0.4s linear 0.6s both;
-  animation: slide-in 0.4s linear 0.6s both;
+          animation: slide-in 0.4s linear 0.6s both;
 }
 
 .slide-in-4 {
   -webkit-animation: slide-in 0.4s linear 0.8s both;
-  animation: slide-in 0.4s linear 0.8s both;
+          animation: slide-in 0.4s linear 0.8s both;
 }
 
 .slide-in-5 {
   -webkit-animation: slide-in 0.4s linear 1s both;
-  animation: slide-in 0.4s linear 1s both;
+          animation: slide-in 0.4s linear 1s both;
 }
 
 @-webkit-keyframes slide-in {
   from {
     -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   to {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 @keyframes slide-in {
   from {
     -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+            transform: translateX(-100%);
   }
   to {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
 /* Slide out animation with delay for each nav item */
 .slide-out-1 {
   -webkit-animation: slide-out 0.3s linear 0.5s both;
-  animation: slide-out 0.3s linear 0.5s both;
+          animation: slide-out 0.3s linear 0.5s both;
 }
 
 .slide-out-2 {
   -webkit-animation: slide-out 0.3s linear 0.4s both;
-  animation: slide-out 0.3s linear 0.4s both;
+          animation: slide-out 0.3s linear 0.4s both;
 }
 
 .slide-out-3 {
   -webkit-animation: slide-out 0.3s linear 0.3s both;
-  animation: slide-out 0.3s linear 0.3s both;
+          animation: slide-out 0.3s linear 0.3s both;
 }
 
 .slide-out-4 {
   -webkit-animation: slide-out 0.3s linear 0.2s both;
-  animation: slide-out 0.3s linear 0.2s both;
+          animation: slide-out 0.3s linear 0.2s both;
 }
 
 .slide-out-5 {
   -webkit-animation: slide-out 0.3s linear 0.1s both;
-  animation: slide-out 0.3s linear 0.1s both;
+          animation: slide-out 0.3s linear 0.1s both;
 }
 
 @-webkit-keyframes slide-out {
   from {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   to {
     -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
 @keyframes slide-out {
   from {
     -webkit-transform: translateX(0);
-    transform: translateX(0);
+            transform: translateX(0);
   }
   to {
     -webkit-transform: translateX(-100%);
-    transform: translateX(-100%);
+            transform: translateX(-100%);
   }
 }
 
@@ -254,7 +252,7 @@ nav li:nth-of-type(5) {
 
 .change .bar1 {
   -webkit-transform: rotate(-45deg) translate(-7px, 8px);
-  transform: rotate(-45deg) translate(-7px, 8px);
+          transform: rotate(-45deg) translate(-7px, 8px);
 }
 
 .change .bar2 {
@@ -263,7 +261,7 @@ nav li:nth-of-type(5) {
 
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-6px, -8px);
-  transform: rotate(45deg) translate(-6px, -8px);
+          transform: rotate(45deg) translate(-6px, -8px);
 }
 
 /* --- Sections ------------------------------------ */
@@ -277,19 +275,19 @@ section {
   display: flex;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
   -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--primaryColor);
 }
 
 section#home {
-  background-image: url('https://images.unsplash.com/photo-1581453904507-626ddb717f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+  background-image: url("https://images.unsplash.com/photo-1581453904507-626ddb717f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
   background-size: cover;
   background-position: center center;
 }
@@ -306,19 +304,19 @@ section#home a {
   border-bottom: 1px solid var(--primaryColor);
 }
 
-section#home a#about {
+section#about {
   background-color: var(--navColor2);
 }
 
-section#home a#skills {
+section#skills {
   background-color: var(--navColor3);
 }
 
-section#home a#projects {
+section#projects {
   background-color: var(--navColor4);
 }
 
-section#home a#contact {
+section#contact {
   background-color: var(--navColor5);
 }
 
