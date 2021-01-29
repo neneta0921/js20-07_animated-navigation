@@ -1,18 +1,11 @@
-const menuBars = document.querySelector('#menu-bars');
-const overlay = document.querySelector('#overlay');
-const nav1 = document.querySelector('#nav-1');
-const nav2 = document.querySelector('#nav-2');
-const nav3 = document.querySelector('#nav-3');
-const nav4 = document.querySelector('#nav-4');
-const nav5 = document.querySelector('#nav-5');
-const navItems = [nav1, nav2, nav3, nav4, nav5];
-
 document.addEventListener('DOMContentLoaded', () => {
   const main = new Main();
 });
 
 class Main {
   constructor() {
+    this.menuBars = document.querySelector('#menu-bars');
+    this.navItems = this._getNavItems();
     this._init();
   }
 
@@ -20,16 +13,27 @@ class Main {
     this._addEvent();
   }
 
+  _getNavItems() {
+    const nav1 = document.querySelector('#nav-1');
+    const nav2 = document.querySelector('#nav-2');
+    const nav3 = document.querySelector('#nav-3');
+    const nav4 = document.querySelector('#nav-4');
+    const nav5 = document.querySelector('#nav-5');
+    const navItems = [nav1, nav2, nav3, nav4, nav5];
+    return navItems;
+  }
+
   // Control Navigation Animation
   _navAnimation(direction1, direction2) {
-    navItems.forEach((nav, i) => {
+    this.navItems.forEach((nav, i) => {
       nav.classList.replace(`slide-${direction1}-${i + 1}`, `slide-${direction2}-${i + 1}`);
     });
   }
 
   _toggleNav() {
+    const overlay = document.querySelector('#overlay');
     // Toggle: Menu Bars Open/Closed
-    menuBars.classList.toggle('change');
+    this.menuBars.classList.toggle('change');
     // Toggle: Menu Active
     overlay.classList.toggle('overlay-active');
     if (overlay.classList.contains('overlay-active')) {
@@ -47,9 +51,9 @@ class Main {
 
   // Event Listeners
   _addEvent() {
-    menuBars.addEventListener('click', this._toggleNav.bind(this));
-    navItems.forEach((nav) => {
-      nav.addEventListener('click', this._toggleNav.bind(this));
+    this.menuBars.addEventListener('click', () => this._toggleNav());
+    this.navItems.forEach((nav) => {
+      nav.addEventListener('click', () => this._toggleNav());
     });
   }
 }
